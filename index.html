@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#155bd5">
+<title>R D SYSTEMS | Computer Parts & Accessories</title>
+<meta name="description" content="Shop computer parts, RAM, SSDs, processors and accessories at R D SYSTEMS.">
+<style>
+:root{--blue:#155bd5;--dark:#102b4e;--bg:#f4f7fc;--muted:#63758c}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--dark)}
+header{background:#fff;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:0 2px 12px #193c6810;position:sticky;top:0;z-index:5}
+.brand{font-size:22px;font-weight:800;color:var(--blue)}
+.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted);margin-top:4px}
+button,input,select{font:inherit}
+button{cursor:pointer;border:0;border-radius:8px;padding:11px 15px;font-weight:700}
+.primary{background:var(--blue);color:white}
+.secondary{background:white;border:1px solid #dce5f1;color:var(--dark)}
+main{max-width:1100px;margin:auto;padding:24px 18px}
+.hero{padding:35px 28px;border-radius:16px;color:white;background:linear-gradient(120deg,#102b4e,#1769e9);display:flex;justify-content:space-between;align-items:center;gap:20px}
+.hero h1{font-size:clamp(28px,5vw,43px);line-height:1.1;margin:12px 0}
+.hero p{color:#e1ecff;line-height:1.7;max-width:500px}
+.hero .art{font-size:65px}
+.eyebrow{font-size:11px;letter-spacing:2px;font-weight:bold;color:#b9d5ff}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 30px}
+.benefits div{background:white;padding:15px;border:1px solid #e3eaf4;border-radius:10px;font-size:13px}
+h2{font-size:24px;margin:25px 0 14px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}
+.controls input{flex:1;min-width:180px}
+input,select{padding:12px;border:1px solid #d8e2ef;border-radius:8px;background:white;color:var(--dark)}
+.categories{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 20px}
+.categories button{background:white;border:1px solid #dce5f1;border-radius:25px;padding:8px 13px;font-size:12px}
+.categories button.active{background:#e3efff;color:var(--blue);border-color:var(--blue)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{background:white;border:1px solid #e3eaf4;border-radius:12px;overflow:hidden}
+.picture{height:130px;background:#eaf1fc;display:grid;place-items:center;font-size:52px}
+.details{padding:14px}
+.tag{font-size:10px;font-weight:bold;background:#edf4ff;color:#155bd5;padding:5px 8px;border-radius:20px}
+.details h3{font-size:16px;min-height:38px;line-height:1.35}
+.spec{font-size:12px;color:var(--muted);line-height:1.6;min-height:38px}
+.price{font-size:22px;font-weight:800;margin:12px 0 5px}
+.warranty{font-size:11px;color:var(--muted);margin-bottom:12px}
+.actions{display:flex;gap:7px}.actions button{flex:1;padding:10px 5px;font-size:12px}
+.panel{background:white;border:1px solid #e3eaf4;border-radius:12px;padding:20px;margin-top:24px}
+footer{background:var(--dark);color:white;padding:25px 5%;line-height:1.8}
+footer small{color:#c1d2e8}
+#cart{position:fixed;right:0;top:0;height:100%;width:min(410px,100%);background:white;z-index:20;box-shadow:-10px 0 35px #102b4e25;padding:22px;overflow:auto;display:none}
+.cartitem{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid #e4eaf2}
+.cartitem button{padding:5px 9px}
+#overlay{display:none;position:fixed;inset:0;background:#102b4e77;z-index:15}
+.muted{color:var(--muted);font-size:12px;line-height:1.6}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.hero{padding:24px 18px}.hero .art{font-size:38px}.benefits{gap:6px}.benefits div{padding:10px;font-size:11px}.details{padding:10px}.details h3{font-size:14px}.picture{height:100px}.actions{flex-direction:column}header{padding:12px 4%}.brand{font-size:19px}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.benefits{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">R D SYSTEMS<small>COMPUTERS · COMPONENTS · ACCESSORIES</small></div>
+  <button class="primary" onclick="openCart()">Cart (<span id="count">0</span>)</button>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">YOUR PC PARTNER</div>
+      <h1>Upgrade your setup.<br>Spend smarter.</h1>
+      <p>Computer parts and accessories for work, gaming and everyday computing. New and used products with clear condition details.</p>
+      <button style="background:white;color:#155bd5" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Explore products ↓</button>
+    </div>
+    <div class="art">🖥️</div>
+  </section>
+
+  <section class="benefits">
+    <div><b>✓ Clear product details</b><br>New and used condition labels</div>
+    <div><b>✓ Customer support</b><br>Ask us before you order</div>
+    <div><b>✓ India-wide enquiries</b><br>Shipping confirmed per order</div>
+  </section>
+
+  <section id="shop">
+    <h2>Shop computer essentials</h2>
+    <p class="muted">Sample products are shown below. Replace them with your actual inventory before launch.</p>
+    <div class="controls">
+      <input id="search" placeholder="Search RAM, SSD, graphics cards..." oninput="renderProducts()">
+      <select id="sort" onchange="renderProducts()">
+        <option value="featured">Featured</option>
+        <option value="low">Price: low to high</option>
+        <option value="high">Price: high to low</option>
+      </select>
+    </div>
+    <div class="categories" id="categories"></div>
+    <div class="grid" id="products"></div>
+  </section>
+
+  <section class="panel">
+    <h2 style="margin-top:0">Need help choosing a part?</h2>
+    <p class="muted">Contact us to confirm compatibility, availability, warranty and delivery charges before ordering.</p>
+    <button class="primary" onclick="contactStore()">Contact R D SYSTEMS</button>
+  </section>
+</main>
+
+<div id="overlay" onclick="closeCart()"></div>
+<aside id="cart">
+  <button class="secondary" onclick="closeCart()">← Continue shopping</button>
+  <h2>Your shopping cart</h2>
+  <div id="cartItems"></div>
+  <hr>
+  <h3>Subtotal: <span id="total">₹0</span></h3>
+  <p class="muted">Shipping is extra and must be confirmed. Ordering opens WhatsApp; it does not process an online payment.</p>
+  <button class="primary" style="width:100%" onclick="checkout()">Order through WhatsApp</button>
+</aside>
+
+<footer>
+  <b>R D SYSTEMS</b><br>
+  Computer parts & accessories<br>
+  <small>Product prices, availability, warranty and delivery must be confirmed before purchase.</small>
+</footer>
+
+<script>
+// IMPORTANT: Replace this with your WhatsApp number including country code.
+// Example format for India: 919829029280 (no +, spaces or dashes).
+const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+
+const inventory = [
+ {id:1,name:"DDR4 8GB Desktop RAM",category:"RAM",price:950,condition:"Used - Tested",warranty:"7-day checking",stock:3,icon:"▤",spec:"DDR4 · Desktop DIMM"},
+ {id:2,name:"480GB SATA SSD",category:"Storage",price:1850,condition:"New",warranty:"Confirm manufacturer warranty",stock:4,icon:"💾",spec:"2.5-inch SATA III"},
+ {id:3,name:"Wireless Keyboard & Mouse",category:"Accessories",price:799,condition:"New",warranty:"Confirm packaging warranty",stock:5,icon:"⌨️",spec:"Wireless · USB receiver"},
+ {id:4,name:"Graphics Card",category:"Graphics Cards",price:6499,condition:"Used - Tested",warranty:"Confirm before ordering",stock:1,icon:"🎮",spec:"Confirm exact model and compatibility"},
+ {id:5,name:"Desktop Processor",category:"Processors",price:3299,condition:"Used - Tested",warranty:"7-day checking",stock:2,icon:"▦",spec:"Confirm model, socket and generation"},
+ {id:6,name:"512GB NVMe SSD",category:"Storage",price:2699,condition:"New",warranty:"Confirm manufacturer warranty",stock:3,icon:"💽",spec:"M.2 NVMe"}
+];
+
+let selectedCategory="All";
+let cart={};
+
+function money(n){return "₹"+n.toLocaleString("en-IN");}
+function renderCategories(){
+ const categories=["All",...new Set(inventory.map(p=>p.category))];
+ document.getElementById("categories").innerHTML=categories.map(c=>
+ `<button class="${c===selectedCategory?'active':''}" onclick="selectCategory('${c}')">${c}</button>`
+ ).join("");
+}
+function selectCategory(c){selectedCategory=c;renderCategories();renderProducts();}
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const sort=document.getElementById("sort").value;
+ let list=inventory.filter(p=>(selectedCategory==="All"||p.category===selectedCategory)&&
+ (p.name+" "+p.category+" "+p.spec).toLowerCase().includes(q));
+ if(sort==="low")list.sort((a,b)=>a.price-b.price);
+ if(sort==="high")list.sort((a,b)=>b.price-a.price);
+ document.getElementById("products").innerHTML=list.length?list.map(p=>`
+ <article class="card">
+  <div class="picture">${p.icon}</div>
+  <div class="details">
+   <span class="tag">${p.condition}</span>
+   <h3>${p.name}</h3>
+   <div class="spec">${p.spec}</div>
+   <div class="price">${money(p.price)}</div>
+   <div class="warranty">Warranty: ${p.warranty}<br>Stock: ${p.stock}</div>
+   <div class="actions">
+    <button class="primary" onclick="addToCart(${p.id})" ${p.stock===0?"disabled":""}>Add to cart</button>
+    <button class="secondary" onclick="enquire(${p.id})">Enquire</button>
+   </div>
+  </div>
+ </article>`).join(""):'<p>No products found.</p>';
+}
+function addToCart(id){
+ const p=inventory.find(x=>x.id===id);
+ if(!p||p.stock<1)return alert("Currently out of stock.");
+ if((cart[id]||0)>=p.stock)return alert("Maximum available stock reached.");
+ cart[id]=(cart[id]||0)+1;updateCart();
+}
+function updateCart(){
+ document.getElementById("count").textContent=Object.values(cart).reduce((a,b)=>a+b,0);
+ const items=inventory.filter(p=>cart[p.id]);
+ document.getElementById("cartItems").innerHTML=items.length?items.map(p=>`
+ <div class="cartitem"><div><b>${p.name}</b><br><small>${money(p.price)} × ${cart[p.id]}</small></div>
+ <div><button class="secondary" onclick="changeQty(${p.id},-1)">−</button>
+ <button class="secondary" onclick="changeQty(${p.id},1)">+</button></div></div>`).join(""):"<p>Your cart is empty.</p>";
+ document.getElementById("total").textContent=money(items.reduce((s,p)=>s+p.price*cart[p.id],0));
+}
+function changeQty(id,d){
+ const p=inventory.find(x=>x.id===id);
+ cart[id]=(cart[id]||0)+d;
+ if(cart[id]<=0)delete cart[id];
+ else if(cart[id]>p.stock)cart[id]=p.stock;
+ updateCart();
+}
+function openCart(){document.getElementById("cart").style.display="block";document.getElementById("overlay").style.display="block";}
+function closeCart(){document.getElementById("cart").style.display="none";document.getElementById("overlay").style.display="none";}
+function validWhatsApp(){
+ if(!/^[0-9]{10,15}$/.test(WHATSAPP_NUMBER)||WHATSAPP_NUMBER.includes("9829029280")){
+  alert("Store owner: replace WHATSAPP_NUMBER in index.html with your real business number first.");return false;
+ }
+ return true;
+}
+function checkout(){
+ const items=inventory.filter(p=>cart[p.id]);
+ if(!items.length)return alert("Your cart is empty.");
+ if(!validWhatsApp())return;
+ const lines=items.map(p=>`${p.name} x ${cart[p.id]} = ${money(p.price*cart[p.id])}`).join("\n");
+ const subtotal=items.reduce((s,p)=>s+p.price*cart[p.id],0);
+ const msg=`Hello R D SYSTEMS! I want to order:\n${lines}\nSubtotal: ${money(subtotal)}\nPlease confirm availability, shipping charges and payment instructions.`;
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank","noopener");
+}
+function enquire(id){
+ const p=inventory.find(x=>x.id===id);
+ if(!validWhatsApp())return;
+ const msg=`Hello R D SYSTEMS! I am interested in ${p.name} (${money(p.price)}). Condition: ${p.condition}. Please confirm availability, compatibility, warranty and shipping.`;
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank","noopener");
+}
+function contactStore(){
+ if(!validWhatsApp())return;
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent("Hello R D SYSTEMS! I have a question about your products."),"_blank","noopener");
+}
+renderCategories();
+renderProducts();
+updateCart();
+</script>
+</body>
+</html>
