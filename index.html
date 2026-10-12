@@ -190,7 +190,7 @@ function changeQty(id,d){
 function openCart(){document.getElementById("cart").style.display="block";document.getElementById("overlay").style.display="block";}
 function closeCart(){document.getElementById("cart").style.display="none";document.getElementById("overlay").style.display="none";}
 function validWhatsApp(){
- if(!/^[0-9]{10,15}$/.test(WHATSAPP_NUMBER)||WHATSAPP_NUMBER.includes("919829029280")){
+ if(!/^[0-9]{10,15}$/.test(WHATSAPP_NUMBER)){
   alert("Store owner: replace WHATSAPP_NUMBER in index.html with your real business number first.");return false;
  }
  return true;
