@@ -202,17 +202,17 @@ function checkout(){
  const lines=items.map(p=>`${p.name} x ${cart[p.id]} = ${money(p.price*cart[p.id])}`).join("\n");
  const subtotal=items.reduce((s,p)=>s+p.price*cart[p.id],0);
  const msg=`Hello R D SYSTEMS! I want to order:\n${lines}\nSubtotal: ${money(subtotal)}\nPlease confirm availability, shipping charges and payment instructions.`;
- window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank","noopener");
+ window.open("https://wa.me/"+919829029280+"?text="+encodeURIComponent(msg),"_blank","noopener");
 }
 function enquire(id){
  const p=inventory.find(x=>x.id===id);
  if(!validWhatsApp())return;
  const msg=`Hello R D SYSTEMS! I am interested in ${p.name} (${money(p.price)}). Condition: ${p.condition}. Please confirm availability, compatibility, warranty and shipping.`;
- window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank","noopener");
+ window.open("https://wa.me/"+919829029280+"?text="+encodeURIComponent(msg),"_blank","noopener");
 }
 function contactStore(){
  if(!validWhatsApp())return;
- window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent("Hello R D SYSTEMS! I have a question about your products."),"_blank","noopener");
+ window.open("https://wa.me/"+919829029280+"?text="+encodeURIComponent("Hello R D SYSTEMS! I have a question about your products."),"_blank","noopener");
 }
 renderCategories();
 renderProducts();
