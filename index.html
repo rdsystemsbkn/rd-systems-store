@@ -128,7 +128,7 @@ const inventory = [
  {id:3,name:"Wireless Keyboard & Mouse",category:"Accessories",price:799,condition:"New",warranty:"Confirm packaging warranty",stock:5,icon:"⌨️",spec:"Wireless · USB receiver"},
  {id:4,name:"Graphics Card",category:"Graphics Cards",price:6499,condition:"Used - Tested",warranty:"Confirm before ordering",stock:1,icon:"🎮",spec:"Confirm exact model and compatibility"},
  {id:5,name:"Desktop Processor",category:"Processors",price:3299,condition:"Used - Tested",warranty:"7-day checking",stock:2,icon:"▦",spec:"Confirm model, socket and generation"},
- {id:6,name:"512GB NVMe SSD",category:"Storage",price:2699,condition:"New",warranty:"Confirm manufacturer warranty",stock:3,icon:"💽",spec:"M.2 NVMe"}
+ {id:6,name:"512GB NVMe SSD",category:"Storage",price:2699,condition:"New",warranty:"Confirm manufacturer warranty",stock:3,icon:"💽",spec:"M.2 NVMe"},{id:7,name:"Tenda N301 N300 Wi-Fi Router",category:"Networking",price:1200,condition:"New",warranty:"1 Year",stock:10,icon:"📶",spec:"300 Mbps Wireless Router"}
 ];
 
 let selectedCategory="All";
@@ -157,7 +157,8 @@ function renderProducts(){
    <h3>${p.name}</h3>
    <div class="spec">${p.spec}</div>
    <div class="price">${money(p.price)}</div>
-   <div class="warranty">Warranty: ${p.warranty}<br>Stock: ${p.stock}</div>
+  <div class="warranty">Warranty: ${p.warranty}</div>
+  
    <div class="actions">
     <button class="primary" onclick="addToCart(${p.id})" ${p.stock===0?"disabled":""}>Add to cart</button>
     <button class="secondary" onclick="enquire(${p.id})">Enquire</button>
